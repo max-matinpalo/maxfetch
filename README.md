@@ -23,7 +23,7 @@ const msgs = await GET("/messages", {status: "new"})
 - request timeouts
 - serializes params into URL query string
 - improved errors and logs
-- very lightweight (min gzipped ~0.9kb)
+- very small, zero dependencies (min gzipped ~1kb)
 
 ## Setup
 
@@ -35,7 +35,7 @@ const user = await api.get("/user");
 
 ### Global
 ``` JS
-import "maxfetch/global"
+import "maxfetch/global";
 const user = await GET("/user");
 ```
 Import once at app start and use `GET()`, `POST()`, `PATCH()`...  
@@ -43,16 +43,15 @@ anywhere without writing any other imports.
 
 ## Configs
 - Base configs for all requests can be registered `configureApi()`
-- Supports all options of `fetch API` and in addition the following options:
-
+- Supports all configs of `fetch API` and in addition the following options:
+<div style="height:12px"></div>
 
 | Option    | Type      | Description                            | Default | Example    |
 |-----------|-----------|----------------------------------------|---------|------------|
 | `baseUrl` | `string`  | Base URL prepended to request paths.   | `""`    | `"/api"`   |
 | `timeout` | `number`  | Request timeout in milliseconds.       | `5000`  | `10000`    |
 | `log`     | `boolean` | Log requests to console.               | `true`  | `true`     |
-
-
+&nbsp;
 ``` JS
 import { configureApi } from "maxfetch";
 
