@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 let globalConfig = {
 	baseUrl: "",
 	timeout: 5000,
