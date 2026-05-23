@@ -42,6 +42,16 @@ export async function api(path, opts = {}) {
 
 	if (!path) throw new Error("path undefined");
 
+	// Validate protocol scheme and base URL
+	const hasProtocol = /^[a-z]+:\/\//i.test(path) || /^[a-z]+:\/\//i.test(config.baseUrl);
+	if (!hasProtocol) {
+		const errorMsg = !config.baseUrl
+			? `maxfetch: Target URL lacks a protocol scheme (http:// or https://). Both config.baseUrl and path are relative.`
+			: `maxfetch: config.baseUrl "${config.baseUrl}" must explicitly start with http:// or https://`;
+
+		console.warn(`⚠️ ${errorMsg}`);
+	}
+
 	// 2. Process params
 	if (config.params) {
 		const query = new URLSearchParams(config.params).toString();

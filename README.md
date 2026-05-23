@@ -6,10 +6,6 @@
 
 **Simpler browser API client.**
 
-```
-npm install maxfetch
-```
-
 ```js
 const user = await GET("/user")
 const res  = await POST("/users", { name: "peter" })
@@ -24,6 +20,21 @@ const msgs = await GET("/messages", {status: "new"})
 - serializes params into URL query string
 - improved errors and logs
 - very small, zero dependencies (min gzipped ~1kb)
+
+
+## Quick Start
+```bash
+npm install maxfetch
+```
+```js
+import "maxfetch/global";
+
+configureApi({
+	baseUrl: import.meta.env.DEV ? "http://localhost:3000" : "https://example.com"
+});
+
+const user = await GET("/user");
+```
 
 ## Setup
 
