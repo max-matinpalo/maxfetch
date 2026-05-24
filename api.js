@@ -1,15 +1,21 @@
 // @ts-nocheck
 
-let globalConfig = {
+export const globalConfig = {
 	baseUrl: "",
 	timeout: 5000,
 	log: true,
 	headers: {}
 };
 
-export function configureApi(config) {
-	globalConfig = { ...globalConfig, ...config };
+export function configureApi(config = {}) {
+	const headers = {
+		...globalConfig.headers,
+		...config.headers
+	};
+
+	Object.assign(globalConfig, config, { headers });
 }
+
 
 function isJsonBody(v) {
 	if (Array.isArray(v)) return true;
