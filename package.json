@@ -1,14 +1,13 @@
 {
 	"name": "maxfetch",
-	"version": "1.1.5",
+	"version": "2.0.1",
 	"description": "Simplest browser API client",
 	"author": "Max Matinpalo",
 	"type": "module",
 	"license": "MIT",
-	"main": "api.js",
+	"main": "maxfetch.js",
 	"exports": {
-		".": "./api.js",
-		"./global": "./global.js"
+		".": "./maxfetch.js"
 	},
 	"repository": {
 		"type": "git",
@@ -17,23 +16,5 @@
 	"bugs": {
 		"url": "https://github.com/max-matinpalo/maxfetch/issues"
 	},
-	"homepage": "https://github.com/max-matinpalo/maxfetch#readme",
-	"keywords": [
-		"maxfetch",
-		"fetch",
-		"api-client",
-		"http-client",
-		"axios",
-		"ky",
-		"wretch",
-		"superagent",
-		"got",
-		"node-fetch",
-		"rest",
-		"json",
-		"browser",
-		"frontend",
-		"lightweight",
-		"zero-dependency"
-	]
+	"homepage": "https://github.com/max-matinpalo/maxfetch#readme"
 }
